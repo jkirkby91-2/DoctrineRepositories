@@ -2,7 +2,7 @@
 
 namespace Jkirkby91\DoctrineRepositories;
 
-use Psr\Http\Message\ServerRequestInterface;
+use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract AS Entity;
 
 /**
  * Class CrudRepositoryTrait
@@ -11,31 +11,13 @@ use Psr\Http\Message\ServerRequestInterface;
 trait CrudRepositoryTrait
 {
 
-    /**
-     * @param ServerRequestInterface $request
-     * @return mixed
-     */
-    abstract public function create(ServerRequestInterface $request);
-
-    /**
-     * @param $id
-     */
     public function read($id)
     {
-        //@TODO implement
+        return false; //@TODO IMPLEMENT
     }
 
-    /**
-     * @param ServerRequestInterface $request
-     * @return mixed
-     */
-    abstract public function update(ServerRequestInterface $request);
-
-    /**
-     * @param $id
-     */
     public function delete($id)
     {
-        //@TODO impleement
+        return false; //@TODO IMPLEMENT
     }
 }
