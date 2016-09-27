@@ -8,19 +8,19 @@ namespace Jkirkby91\DoctrineRepositories;
  */
 abstract class DoctrineRepository extends \Doctrine\ORM\EntityRepository implements \Jkirkby91\DoctrineRepositories\Contracts\DoctrineRepositoryContract
 {
-//    /**
-//     * @param array $input
-//     * @param $paginate
-//     * @return mixed
-//     */
+    /**
+     * @param array $input
+     * @param $paginate
+     * @return mixed
+     */
 //    public function search(array $input, $paginate)
 //    {
-//        //@TODO implement search
+//        return false @TODO implement search
 //    }
-//
+
 //    public function paginatedQuery()
 //    {
-//        return false;//@TODO  implement
+//        return false @TODO  implement
 //    }
 
     /**
