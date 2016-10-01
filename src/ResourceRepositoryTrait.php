@@ -2,12 +2,37 @@
 
 namespace Jkirkby91\DoctrineRepositories;
 
+use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract AS Entity;
+
 /**
  * Class ResourceRepositoryTrait
+ *
  * @package Jkirkby91\RepositoryBoiler\Libraries
+ * @author James Kirkby <jkirkby91@gmail.com>
  */
 trait ResourceRepositoryTrait
 {
+
+    /**
+     * @return mixed
+     */
+    public function store(Entity $entity)
+    {
+        $this->_em->persist($entity);
+        $this->_em->flush();
+        return $entity;
+    }
+
+    /**
+     * @param Entity $entity
+     * @return Entity
+     */
+    public function update(Entity $entity)
+    {
+        $this->_em->merge($entity);
+        $this->_em->flush();
+        return $entity;
+    }
 
     /**
      * @return mixed
