@@ -7,6 +7,8 @@ use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract AS Entity;
 /**
  * Class ResourceRepositoryTrait
  *
+ * Doctrine Resource Repository helper functions.
+ *
  * @package Jkirkby91\RepositoryBoiler\Libraries
  * @author James Kirkby <jkirkby91@gmail.com>
  */
@@ -68,5 +70,4 @@ trait ResourceRepositoryTrait
         }
         return true;
     }
-
 }
