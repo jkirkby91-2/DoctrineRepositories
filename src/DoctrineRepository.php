@@ -4,7 +4,9 @@ namespace Jkirkby91\DoctrineRepositories;
 
 /**
  * Class DoctrineRepository
- * @package Jkirkby91\DoctrineRepositoriesd
+ *
+ * @package Jkirkby91\DoctrineRepositories
+ * @author James Kirkby <jkirkby91@gmail.com>
  */
 abstract class DoctrineRepository extends \Doctrine\ORM\EntityRepository implements \Jkirkby91\DoctrineRepositories\Contracts\DoctrineRepositoryContract
 {
@@ -25,7 +27,7 @@ abstract class DoctrineRepository extends \Doctrine\ORM\EntityRepository impleme
 
     /**
      * When exception is thrown in try/catch block of entity manager, a error is thrown when you next try use the entity manager
-     * ' The EntityManager is closed'
+     * 'The EntityManager is closed'
      * you need to reset the entity manager
      */
     public function resetEntityManager()
