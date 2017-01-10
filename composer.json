@@ -1,5 +1,5 @@
 {
-    "name": "jkirkby91/DoctrineRepositories",
+    "name": "jkirkby91/doctrinerepositories",
     "autoload": {
         "psr-4": {
             "Jkirkby91\\DoctrineRepositories\\": "src/"
