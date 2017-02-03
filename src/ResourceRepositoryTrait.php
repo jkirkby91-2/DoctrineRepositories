@@ -41,7 +41,7 @@ trait ResourceRepositoryTrait
      */
     public function index()
     {
-        return $this->all();
+        return $this->findAll();
     }
 
     /**

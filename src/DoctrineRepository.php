@@ -20,11 +20,6 @@ abstract class DoctrineRepository extends \Doctrine\ORM\EntityRepository impleme
 //        return false @TODO implement search
 //    }
 
-//    public function paginatedQuery()
-//    {
-//        return false @TODO  implement
-//    }
-
     /**
      * When exception is thrown in try/catch block of entity manager, a error is thrown when you next try use the entity manager
      * 'The EntityManager is closed'
