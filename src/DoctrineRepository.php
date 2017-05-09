@@ -2,23 +2,17 @@
 
 namespace Jkirkby91\DoctrineRepositories;
 
+use \Doctrine\ORM\EntityRepository;
+use \Jkirkby91\DoctrineRepositories\Contracts\DoctrineRepositoryContract;
+
 /**
  * Class DoctrineRepository
  *
  * @package Jkirkby91\DoctrineRepositories
  * @author James Kirkby <jkirkby91@gmail.com>
  */
-abstract class DoctrineRepository extends \Doctrine\ORM\EntityRepository implements \Jkirkby91\DoctrineRepositories\Contracts\DoctrineRepositoryContract
+abstract class DoctrineRepository extends EntityRepository implements DoctrineRepositoryContract
 {
-    /**
-     * @param array $input
-     * @param $paginate
-     * @return mixed
-     */
-//    public function search(array $input, $paginate)
-//    {
-//        return false @TODO implement search
-//    }
 
     /**
      * When exception is thrown in try/catch block of entity manager, a error is thrown when you next try use the entity manager
