@@ -6,7 +6,7 @@
         }
     },
     "require": {
-        "jkirkby91/RepositoryBoiler": "dev-master"
+        "jkirkby91/RepositoryBoiler": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"
