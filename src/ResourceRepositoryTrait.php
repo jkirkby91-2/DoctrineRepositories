@@ -1,73 +1,83 @@
 <?php
 
-namespace Jkirkby91\DoctrineRepositories;
+	namespace Jkirkby91\DoctrineRepositories;
 
-use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract AS Entity;
+	use Doctrine\ORM\OptimisticLockException;
+	use Doctrine\ORM\ORMInvalidArgumentException;
+	use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract AS Entity;
 
-/**
- * Class ResourceRepositoryTrait
- *
- * Doctrine Resource Repository helper functions.
- *
- * @package Jkirkby91\RepositoryBoiler\Libraries
- * @author James Kirkby <jkirkby91@gmail.com>
- */
-trait ResourceRepositoryTrait
-{
+	/**
+	 * Trait ResourceRepositoryTrait
+	 *
+	 * @package Jkirkby91\DoctrineRepositories
+	 * @author  James Kirkby <jkirkby@protonmail.ch>
+	 */
+	trait ResourceRepositoryTrait
+	{
 
-    /**
-     * @return mixed
-     */
-    public function store(Entity $entity)
-    {
-        $this->_em->persist($entity);
-        $this->_em->flush();
-        return $entity;
-    }
+		/**
+		 * store()
+		 * @param \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract $entity
+		 *
+		 * @return \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract
+		 */
+		public function store(Entity $entity)
+		{
+			$this->_em->persist($entity);
+			$this->_em->flush();
+			return $entity;
+		}
 
-    /**
-     * @param Entity $entity
-     * @return Entity
-     */
-    public function update(Entity $entity)
-    {
-        $this->_em->merge($entity);
-        $this->_em->flush();
-        return $entity;
-    }
+		/**
+		 * update()
+		 * @param \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract $entity
+		 *
+		 * @return \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract
+		 */
+		public function update(Entity $entity)
+		{
+			$this->_em->merge($entity);
+			$this->_em->flush();
+			return $entity;
+		}
 
-    /**
-     * @return mixed
-     */
-    public function index()
-    {
-        return $this->findAll();
-    }
+		/**
+		 * index()
+		 * @return mixed
+		 */
+		public function index()
+		{
+			return $this->findAll();
+		}
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function show($id)
-    {
-        return $this->find($id);
-    }
+		/**
+		 * show()
+		 * @param $id
+		 *
+		 * @return mixed
+		 */
+		public function show($id)
+		{
+			return $this->find($id);
+		}
 
-    /**
-     * @param int $id
-     * @return bool|OptimisticLockException|ORMInvalidArgumentException|\Exception
-     */
-    public function destroy($id)
-    {
-        try {
-            $entity = $this->find($id);
-            $this->_em->remove($entity);
-            $this->_em->flush();
-        } catch (OptimisticLockException $e) {
-            return $e;
-        } catch (ORMInvalidArgumentException $e) {
-            return $e;
-        }
-        return true;
-    }
-}
+		/**
+		 * destroy()
+		 * @param $id
+		 *
+		 * @return bool|\Exception|\Jkirkby91\DoctrineRepositories\OptimisticLockException|\Jkirkby91\DoctrineRepositories\ORMInvalidArgumentException
+		 */
+		public function destroy($id)
+		{
+			try {
+				$entity = $this->find($id);
+				$this->_em->remove($entity);
+				$this->_em->flush();
+			} catch (OptimisticLockException $e) {
+				return $e;
+			} catch (ORMInvalidArgumentException $e) {
+				return $e;
+			}
+			return true;
+		}
+	}

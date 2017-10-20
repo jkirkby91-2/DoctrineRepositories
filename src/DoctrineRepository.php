@@ -28,4 +28,5 @@ abstract class DoctrineRepository extends EntityRepository implements DoctrineRe
             );
         }
     }
+
 }
