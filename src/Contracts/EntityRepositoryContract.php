@@ -1,17 +1,25 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\DoctrineRepositories\Contracts;
+	namespace Jkirkby91\DoctrineRepositories\Contracts {
 
-/**
- * Interface EntityRepositoryContract
- * @package Jkirkby91\DoctrineRepositories\Contracts
- */
-interface EntityRepositoryContract
-{
+		use Jkirkby91\Boilers\NodeEntityBoiler\EntityContract;
 
-    /**
-     * resets the entity manager when an exception is thrown
-     * @return mixed
-     */
-    public function createNode($entity);
-}
+		/**
+		 * Interface EntityRepositoryContract
+		 *
+		 * @package Jkirkby91\DoctrineRepositories\Contracts
+		 * @author  James Kirkby <jkirkby@protonmail.ch>
+		 */
+		interface EntityRepositoryContract
+		{
+
+			/**
+			 * createNode()
+			 * @param \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract $entity
+			 *
+			 * @return \Jkirkby91\Boilers\NodeEntityBoiler\EntityContract
+			 */
+			public function createNode(EntityContract $entity) : EntityContract;
+		}
+	}

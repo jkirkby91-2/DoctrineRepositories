@@ -1,24 +1,26 @@
 <?php
+	declare(strict_types=1);
 
-namespace Jkirkby91\DoctrineRepositories;
+	namespace Jkirkby91\DoctrineRepositories {
 
-//use LaravelDoctrine\ORM\Pagination\Paginatable;
-//    use Paginatable;
+		use Doctrine\{
+			Common\Collections\Collection
+		};
 
-//@TODO implement paginate this higher up dep tree in laravelDoctrineboiler
+		/**
+		 * Class RepositoryTrait
+		 * @package Jkirkby91\RepositoryBoiler\Libraries
+		 */
+		trait RepositoryTrait
+		{
 
-/**
- * Class RepositoryTrait
- * @package Jkirkby91\RepositoryBoiler\Libraries
- */
-trait RepositoryTrait
-{
-
-    /**
-     * @return array
-     */
-    public function all()
-    {
-        return $this->findAll();
-    }
-}
+			/**
+			 * all()
+			 * @return \Doctrine\Common\Collections\Collection
+			 */
+			public function all() : Collection
+			{
+				return $this->findAll();
+			}
+		}
+	}
